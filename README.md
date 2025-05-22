@@ -20,7 +20,7 @@ O projeto visa que o mentorado aprenda a:
 - Java 17+
 - Spring Boot (Web)
 - Banco em memória H2
-- Maven ou Gradle para gerenciamento de dependências
+- Maven para gerenciamento de dependências
 - JUnit e Mockito para testes
 
 ## 🧱 Módulos da Mentoria
