@@ -1,10 +1,10 @@
-package com.codecraft.mentor;
+package com.codecraftmentor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MentorApplicationTests {
+class CodeCraftMentorApplicationTests {
 
 	@Test
 	void contextLoads() {
