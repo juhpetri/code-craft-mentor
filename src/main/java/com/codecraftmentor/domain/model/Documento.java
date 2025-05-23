@@ -3,10 +3,10 @@ package com.codecraftmentor.domain.model;
 import static com.google.common.base.Strings.isNullOrEmpty;
 
 public class Documento {
-    private final String valor;
+    private final String documento;
 
-    public Documento(String valor) {
-        this.valor = valor;
+    public Documento(String documento) {
+        this.documento = documento;
     }
 
     public static boolean isValido(String valor) {
@@ -19,6 +19,6 @@ public class Documento {
 
     @Override
     public String toString() {
-        return valor;
+        return documento;
     }
 }

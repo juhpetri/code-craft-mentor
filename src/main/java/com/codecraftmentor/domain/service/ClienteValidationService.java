@@ -4,9 +4,11 @@ import com.codecraftmentor.application.dto.ClienteDTO;
 import com.codecraftmentor.domain.validation.ClienteValidator;
 import com.codecraftmentor.domain.validation.DocumentoValidator;
 import com.codecraftmentor.domain.validation.EmailValidator;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class ClienteValidationService {
     private final List<ClienteValidator> clienteValidators;
 

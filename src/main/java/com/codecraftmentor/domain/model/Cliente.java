@@ -1,18 +1,32 @@
 package com.codecraftmentor.domain.model;
 
-import lombok.Data;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.UUID;
 
-@Data
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Cliente {
+    @Setter
+    @Id
     private UUID id;
     private String nome;
+    @Embedded
     private Documento documento;
+    @Embedded
     private Email email;
 
-    public Cliente(UUID id, String nome, Documento documento, Email email) {
-        this.id = id;
+    public Cliente(String nome, Documento documento, Email email) {
+        this.id = UUID.randomUUID();
         this.nome = nome;
         this.documento = documento;
         this.email = email;

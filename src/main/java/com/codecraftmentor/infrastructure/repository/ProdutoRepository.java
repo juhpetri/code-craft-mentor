@@ -1,5 +1,8 @@
 package com.codecraftmentor.infrastructure.repository;
 
-public class ProdutoRepository {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ProdutoRepository {
     // Implementação simulada
 }

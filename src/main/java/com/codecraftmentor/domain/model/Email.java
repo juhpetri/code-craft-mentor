@@ -8,10 +8,10 @@ public class Email {
     private static final Pattern EMAIL_REGEX = Pattern.compile("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$");
 
     @Getter
-    private final String valor;
+    private final String email;
 
     public Email(String email) {
-        this.valor = email;
+        this.email = email;
     }
 
     public static boolean isValido(String email) {
@@ -23,6 +23,6 @@ public class Email {
 
     @Override
     public String toString() {
-        return valor;
+        return email;
     }
 }

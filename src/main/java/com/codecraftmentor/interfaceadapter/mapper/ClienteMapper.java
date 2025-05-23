@@ -15,7 +15,6 @@ public interface ClienteMapper {
     ClienteResponseDTO toDTO(Cliente cliente);
 
     // Mapeia ClienteCreateDTO -> Cliente
-    @Mapping(target = "id", expression = "java(java.util.UUID.randomUUID())")
     @Mapping(target = "email", expression = "java(new Email(dto.email))")
     @Mapping(target = "documento", expression = "java(new Documento(dto.documento))")
     Cliente fromCreateDTO(ClienteDTO dto);
