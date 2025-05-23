@@ -1,8 +1,8 @@
-# 📘 Módulo 2 – Clean Code
+# 📘 Módulo 2 – Clean Code e Histórias de Usuário
 
 ## 🎯 Objetivo
 
-Ensinar o desenvolvedor a escrever **código limpo e legível**, usando o projeto `CodeCraftMentor` como base prática. O objetivo é reforçar que um código fácil de entender é também mais fácil de manter, testar e evoluir.
+Ensinar o trainee a escrever **código limpo e legível** e aplicar esse conhecimento na **implementação de histórias de usuário reais**, usando o projeto `CodeCraftMentor` como base prática.
 
 ---
 
@@ -19,7 +19,7 @@ Clean Code é um conjunto de boas práticas para escrever código:
 
 ---
 
-## 🧼 Princípios que aplicaremos no projeto
+## 💮 Princípios que aplicaremos no projeto
 
 ### 1. Nomes significativos
 - Nomeie classes, variáveis e métodos com clareza e intenção
@@ -47,86 +47,88 @@ Clean Code é um conjunto de boas práticas para escrever código:
 
 ---
 
-## 🚀 Aplicação no projeto `CodeCraftMentor`
+## 🚀 Histórias de Usuário
 
-Durante este módulo, revisaremos as entidades `Cliente`, `Produto` e `Pedido`, e criaremos os serviços responsáveis pelo cadastro e manipulação desses objetos de forma clara, reutilizável e seguindo os princípios de Clean Code.
+Durante este módulo, também abordamos a implementação de **User Stories** (histórias de usuário), seguindo o modelo usado em ferramentas como o Azure DevOps (VSTS).
+
+Cada funcionalidade implementada será representada por um **Product Backlog Item (PBI)**.
+
+Formato:
+> **Como** [persona/usuário]  
+> **Quero** [funcionalidade]  
+> **Para** [benefício]
 
 ---
 
-## ✅ Atividades práticas
+## ✅ Atividades práticas (PBIs)
 
-### Atividade 1 – Cadastro de Produto
+### 📅 PBI 1 – Cadastro de Produto
+**Como** vendedor da loja  
+**Quero** cadastrar um novo produto com nome, quantidade e preço  
+**Para** que ele fique disponível para vendas
 
-- Atualize a classe `Produto` com os seguintes atributos:
+**Tarefas:**
+- Criar classe `Produto` com:
   - `String nome`
   - `Integer quantidade`
   - `BigDecimal valorUnitario`
   - `BigDecimal valorTotal`
-
-- Crie a lógica na camada de serviço (`ProdutoService`) que, ao receber o produto, calcule e atribua o `valorTotal` como:
+- Na classe `ProdutoService`, calcular o `valorTotal` como:
   ```java
   valorTotal = valorUnitario.multiply(BigDecimal.valueOf(quantidade));
   ```
+- Aplicar boas práticas de Clean Code (nomes claros, separação de responsabilidades)
 
-- Aplique nomes significativos, evite duplicações e mantenha a classe coesa.
+---
 
-### Atividade 2 – Cadastro de Cliente
+### 📅 PBI 2 – Cadastro de Cliente
+**Descritivo:**
+O sistema deve permitir o cadastro de um cliente com as seguintes informações:
+- Nome completo
+- Documento (CPF ou CNPJ)
+- E-mail de contato
 
-- Crie a entidade `Cliente` com os seguintes atributos:
-  - `String nome`
-  - `String documento`
-  - `String email`
+Esses dados devem ser armazenados e organizados de forma que o cliente possa posteriormente ser vinculado a um pedido de venda. O nome e o e-mail do cliente deverão estar disponíveis para exibição em resumos de pedidos.
 
-- Implemente a classe `ClienteService` com o método `cadastrar(Cliente cliente)`
+Além do cadastro, o sistema deve apresentar uma forma de **visualizar um resumo do cliente**, contendo apenas nome e e-mail, para facilitar a identificação rápida nas telas de pedido.
 
-- Crie um método `resumo()` na entidade que retorne, por exemplo:
-  ```java
-  public String resumo() {
-      return "Cliente: " + nome + " | Email: " + email;
-  }
-  ```
+> Este PBI foca no domínio do cliente. Ainda **não há necessidade de persistência em banco de dados ou uso de framework** (como Spring), pois o objetivo é aplicar os fundamentos de programação orientada a objetos, composição e boas práticas de Clean Code.
 
-### Atividade 3 – Cadastro de Pedido (opcional para desafio extra)
+---
 
-- Crie a entidade `Pedido`, que contenha um `Produto` e um `Cliente`
-- Implemente a classe `PedidoService` com o método `registrar(Pedido pedido)`
-- No método `exibirResumo()`, apresente as seguintes informações:
-  - Nome do cliente
-  - Email do cliente
-  - Nome do produto
-  - Quantidade e valor total
+### 📅 PBI 3 – Registrar Pedido
+**Como** atendente  
+**Quero** registrar um pedido com cliente e produto  
+**Para** manter o controle de vendas e faturamento
 
-> 💡 Dica: Use composição quando um objeto faz parte ou pertence a outro. 
-Por exemplo, um Pedido tem um Cliente e um Produto. Em vez de criar todos os dados como atributos soltos, crie objetos separados (Cliente, Produto) e use-os dentro da classe Pedido. Isso deixa o código mais organizado, reutilizável e fácil de manter.
+**Tarefas:**
+- Criar classe `Pedido` com:
+  - `Cliente cliente`
+  - `Produto produto`
+- Criar `PedidoService` com método `registrar(Pedido pedido)`
+- Criar método `exibirResumo()` com informações:
+  - Nome e email do cliente
+  - Nome, quantidade e valor total do produto
 
-#### 🧩 O que é Composição de Objetos?
-
-Composição é um princípio da orientação a objetos onde **uma classe é composta por outras**. No caso do `Pedido`, ele é formado por um `Produto` e um `Cliente`, ao invés de ter atributos soltos como `nomeProduto`, `nomeCliente`, etc.
+#### 🧉 O que é Composição de Objetos?
+Composição é quando um objeto é **composto por outros objetos**. Em vez de repetir atributos de cliente e produto, reutilizamos suas classes dentro de `Pedido`:
 
 ```java
 public class Pedido {
-    private Cliente cliente;
-    private Produto produto;
+  private Cliente cliente;
+  private Produto produto;
 
-    public String exibirResumo() {
-        return "Pedido de " + cliente.getNome() + " (" + cliente.getEmail() + ")\n" +
-               "Produto: " + produto.getNome() + "\n" +
-               "Quantidade: " + produto.getQuantidade() + "\n" +
-               "Total: R$" + produto.getValorTotal();
-    }
+  public String exibirResumo() {
+    return "Pedido de " + cliente.getNome() + " (" + cliente.getEmail() + ")\n" +
+            "Produto: " + produto.getNome() + "\n" +
+            "Quantidade: " + produto.getQuantidade() + "\n" +
+            "Total: R$" + produto.getValorTotal();
+  }
 }
 ```
 
-✅ **Benefícios da composição:**
-- Reaproveitamento de código
-- Redução da duplicação, código mais claro e reutilizável
-- Melhor separação de responsabilidades
-- Facilita manutenção e leitura
-- Representa melhor a realidade
-
-> Composição promove reutilização sem acoplamento excessivo. Prefira-a à herança quando possível.
+> 💡 **Dica:** Use composição quando um objeto **faz parte** ou **pertence** a outro. Isso deixa o código mais **organizado, reutilizável e fácil de entender**.
 
 ---
 
 Próximo módulo: [Módulo 3 – SOLID](../modulo-3/README.md)
-

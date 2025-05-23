@@ -1,5 +1,5 @@
 package com.codecraftmentor.application.dto;
 
-public class ProdutoRequestDTO {
+public class ProdutoDTO {
 
 }

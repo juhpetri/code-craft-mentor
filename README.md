@@ -32,14 +32,14 @@ O projeto visa que o mentorado aprenda a:
 - Criação do primeiro endpoint REST (`/ping`)
 - Compreensão da estrutura básica de um projeto Java web
 
-### Módulo 2 — Entendendo e Implementando Histórias de Usuário
+### Módulo 2 — Aplicando Clean Code e Implementando Histórias de Usuário
 
 - Introdução às histórias de usuário e sua importância
 - Modelagem simples de entidades (Produto, Cliente)
 - Implementação de endpoints para criação e consulta
 - Validação básica e organização inicial do código
 
-### Módulo 3 — Aplicando Clean Code e Princípios SOLID
+### Módulo 3 — Princípios SOLID
 
 - Refatoração para código limpo (nomes claros, métodos pequenos, responsabilidade única)
 - Introdução e aplicação dos princípios SOLID
