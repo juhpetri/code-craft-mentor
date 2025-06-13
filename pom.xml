@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.code.craft.mentor</groupId>
-    <artifactId>code-craft-mentor</artifactId>
+    <artifactId>package com.code.craft.mentor;</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>code-craft-mentor</name>
+    <name>package com.code.craft.mentor;</name>
     <description>Projeto educativo de mentoria em Java com Clean Architecture</description>
 
     <parent>

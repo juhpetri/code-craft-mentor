@@ -70,7 +70,7 @@ src/
  └── main/
      └── java/
          └── com/
-             └── code-craft-mentor/
+             └── package com.code.craft.mentor;/
                  ├── model/
                  ├── app/
                  ├── controller/
