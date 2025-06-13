@@ -1,4 +1,4 @@
-package com.codecraftmentor.fundamentos;
+package com.code.craft.mentor.fundamentos;
 
 public class TiposVariaveis {
 

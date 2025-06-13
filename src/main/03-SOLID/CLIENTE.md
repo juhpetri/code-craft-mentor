@@ -6,7 +6,7 @@ Este documento descreve como os princípios SOLID foram aplicados na estrutura d
 
 ## Estrutura do Projeto
 ```text
-com.codecraftmentor
+com.code.craft.mentor
 ├── domain
 │   ├── model
 │       └── Cliente.java

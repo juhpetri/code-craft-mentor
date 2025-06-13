@@ -2,7 +2,7 @@
 
 ## 🎯 Objetivo
 
-Ensinar o trainee a escrever **código limpo e legível** e aplicar esse conhecimento na **implementação de histórias de usuário reais**, usando o projeto `CodeCraftMentor` como base prática.
+Ensinar o trainee a escrever **código limpo e legível** e aplicar esse conhecimento na **implementação de histórias de usuário reais**, usando o projeto `code-craft-mentor` como base prática.
 
 ---
 

@@ -4,12 +4,12 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.codecraftmentor</groupId>
-    <artifactId>codecraftmentor</artifactId>
+    <groupId>com.code.craft.mentor</groupId>
+    <artifactId>code-craft-mentor</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>CodeCraftMentor</name>
+    <name>code-craft-mentor</name>
     <description>Projeto educativo de mentoria em Java com Clean Architecture</description>
 
     <parent>
