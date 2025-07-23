@@ -1,12 +1,14 @@
 package com.codecraftmentor.interfaceadapter.controller;
 
-import com.codecraftmentor.application.dto.ClienteResponseDTO;
-import com.codecraftmentor.application.dto.ClienteDTO;
-import com.codecraftmentor.application.usecase.ClienteUseCase;
-import org.springframework.web.bind.annotation.*;
+import com.codecraftmentor.domain.usecase.ClienteUseCase;
+import com.codecraftmentor.interfaceadapter.dto.ClienteDTO;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/clientes")
@@ -19,17 +21,12 @@ public class ClienteController {
     }
 
     @PostMapping
-    public ClienteResponseDTO criar(@RequestBody ClienteDTO dto) {
-        return clienteUseCase.criar(dto);
-    }
-
-    @PutMapping("/{id}")
-    public ClienteResponseDTO atualizar(@PathVariable UUID id, @RequestBody ClienteDTO dto) {
-        return clienteUseCase.atualizar(id, dto);
+    public ClienteDTO cadastrarCliente(@RequestBody ClienteDTO clienteDTO) {
+        return clienteUseCase.cadastrarCliente(clienteDTO);
     }
 
     @GetMapping
-    public List<ClienteResponseDTO> listar() {
-        return clienteUseCase.listar();
+    public List<ClienteDTO> listarClientes() {
+        return clienteUseCase.listarClientes();
     }
 }

@@ -2,6 +2,16 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="libs-release-remote" />
+      <option name="url" value="http://10.119.10.193:8081/repository/maven-public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="snapshots" />
+      <option name="name" value="libs-snapshot-remote" />
+      <option name="url" value="http://10.119.10.193:8081/repository/maven-public/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="snapshots" />
       <option name="name" value="libs-snapshot-remote" />
       <option name="url" value="http://nexus.anymarket.vpc:8081/nexus/content/groups/public/" />
